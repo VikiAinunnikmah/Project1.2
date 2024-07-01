@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Resep Makanan</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://i.ibb.co.com/XWh3LGh/bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .welcome-text {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 20px;
+            animation: moveText 5s infinite alternate;
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(-10px);
+            }
+            100% {
+                transform: translateX(10px);
+            }
+        }
+
+        .btn-enter {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            animation: bounce 2s infinite;
+        }
+
+        .btn-enter:hover {
+            background-color: #555;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="welcome-text">Selamat Datang di Perpustakaan Resep Makanan</h1>
+        <a href="index.php" class="btn-enter">Masuk</a>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const welcomeText = document.querySelector(".welcome-text");
+            let direction = 1;
+            setInterval(() => {
+                welcomeText.style.transform = `translateX(${direction * 10}px)`;
+                direction *= -1;
+            }, 500);
+        });
+    </script>
+</body>
+</html>
